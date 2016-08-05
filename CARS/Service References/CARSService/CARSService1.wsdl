@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CARSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" />
+      <xsd:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICARSService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_AddEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_AddEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetManagers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagers" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetManagers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ApplyLeave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyLeave" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ApplyLeave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyLeaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetMyLeaves_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyLeaves" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetMyLeaves_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyLeavesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetMyTeamLeaves_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyTeamLeaves" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetMyTeamLeaves_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyTeamLeavesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ApproveLeave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveLeave" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ApproveLeave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveLeaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_RejectLeave_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectLeave" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_RejectLeave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectLeaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveEarnedHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveEarnedHours" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveEarnedHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveEarnedHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveUsedHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveUsedHours" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveUsedHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveUsedHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveUsedHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveUsedHours" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveUsedHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveUsedHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ForgetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_ForgetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetLeaveTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeaveTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetLeaveTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeaveTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_FindLeaves_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindLeaves" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_FindLeaves_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindLeavesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAllEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAllEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetReportPeriods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPeriods" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetReportPeriods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_UpdateReportPeriods_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReportPeriods" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_UpdateReportPeriods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReportPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetFrozenDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrozenDate" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetFrozenDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrozenDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveReportForAdminAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveReportForAdminAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveReportForAdminAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveReportForAdminAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveReportForAdminAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveReportForAdminAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveReportForAdminAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveReportForAdminAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveReportForSupervisorAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveReportForSupervisorAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetAnnualLeaveReportForSupervisorAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualLeaveReportForSupervisorAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveReportForSupervisorAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveReportForSupervisorAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetSickLeaveReportForSupervisorAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSickLeaveReportForSupervisorAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_CheckSupervisorValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSupervisorValidation" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_CheckSupervisorValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSupervisorValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetUserManualAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserManualAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetUserManualAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserManualAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetReportBugAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportBugAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_GetReportBugAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportBugAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_RecallLeave_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecallLeave" />
+  </wsdl:message>
+  <wsdl:message name="ICARSService_RecallLeave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecallLeaveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICARSService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/Login" message="tns:ICARSService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/LoginResponse" message="tns:ICARSService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/AddEmployee" message="tns:ICARSService_AddEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/AddEmployeeResponse" message="tns:ICARSService_AddEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/UpdateEmployee" message="tns:ICARSService_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/UpdateEmployeeResponse" message="tns:ICARSService_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetManagers" message="tns:ICARSService_GetManagers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetManagersResponse" message="tns:ICARSService_GetManagers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyLeave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/ApplyLeave" message="tns:ICARSService_ApplyLeave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/ApplyLeaveResponse" message="tns:ICARSService_ApplyLeave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyLeaves">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetMyLeaves" message="tns:ICARSService_GetMyLeaves_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetMyLeavesResponse" message="tns:ICARSService_GetMyLeaves_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyTeamLeaves">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetMyTeamLeaves" message="tns:ICARSService_GetMyTeamLeaves_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetMyTeamLeavesResponse" message="tns:ICARSService_GetMyTeamLeaves_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveLeave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/ApproveLeave" message="tns:ICARSService_ApproveLeave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/ApproveLeaveResponse" message="tns:ICARSService_ApproveLeave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectLeave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/RejectLeave" message="tns:ICARSService_RejectLeave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/RejectLeaveResponse" message="tns:ICARSService_RejectLeave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveEarnedHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveEarnedHours" message="tns:ICARSService_GetAnnualLeaveEarnedHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveEarnedHoursResponse" message="tns:ICARSService_GetAnnualLeaveEarnedHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveUsedHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveUsedHours" message="tns:ICARSService_GetAnnualLeaveUsedHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveUsedHoursResponse" message="tns:ICARSService_GetAnnualLeaveUsedHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveUsedHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveUsedHours" message="tns:ICARSService_GetSickLeaveUsedHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveUsedHoursResponse" message="tns:ICARSService_GetSickLeaveUsedHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/ForgetPassword" message="tns:ICARSService_ForgetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/ForgetPasswordResponse" message="tns:ICARSService_ForgetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaveTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetLeaveTypes" message="tns:ICARSService_GetLeaveTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetLeaveTypesResponse" message="tns:ICARSService_GetLeaveTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindLeaves">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/FindLeaves" message="tns:ICARSService_FindLeaves_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/FindLeavesResponse" message="tns:ICARSService_FindLeaves_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetAllEmployees" message="tns:ICARSService_GetAllEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetAllEmployeesResponse" message="tns:ICARSService_GetAllEmployees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPeriods">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetReportPeriods" message="tns:ICARSService_GetReportPeriods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetReportPeriodsResponse" message="tns:ICARSService_GetReportPeriods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportPeriods">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/UpdateReportPeriods" message="tns:ICARSService_UpdateReportPeriods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/UpdateReportPeriodsResponse" message="tns:ICARSService_UpdateReportPeriods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetVersion" message="tns:ICARSService_GetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetVersionResponse" message="tns:ICARSService_GetVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrozenDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetFrozenDate" message="tns:ICARSService_GetFrozenDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetFrozenDateResponse" message="tns:ICARSService_GetFrozenDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveReportForAdminAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveReportForAdminAddress" message="tns:ICARSService_GetAnnualLeaveReportForAdminAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveReportForAdminAddressResponse" message="tns:ICARSService_GetAnnualLeaveReportForAdminAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveReportForAdminAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveReportForAdminAddress" message="tns:ICARSService_GetSickLeaveReportForAdminAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveReportForAdminAddressResponse" message="tns:ICARSService_GetSickLeaveReportForAdminAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveReportForSupervisorAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveReportForSupervisorAddress" message="tns:ICARSService_GetAnnualLeaveReportForSupervisorAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetAnnualLeaveReportForSupervisorAddressResponse" message="tns:ICARSService_GetAnnualLeaveReportForSupervisorAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveReportForSupervisorAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveReportForSupervisorAddress" message="tns:ICARSService_GetSickLeaveReportForSupervisorAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetSickLeaveReportForSupervisorAddressResponse" message="tns:ICARSService_GetSickLeaveReportForSupervisorAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSupervisorValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/CheckSupervisorValidation" message="tns:ICARSService_CheckSupervisorValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/CheckSupervisorValidationResponse" message="tns:ICARSService_CheckSupervisorValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserManualAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetUserManualAddress" message="tns:ICARSService_GetUserManualAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetUserManualAddressResponse" message="tns:ICARSService_GetUserManualAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportBugAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/GetReportBugAddress" message="tns:ICARSService_GetReportBugAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/GetReportBugAddressResponse" message="tns:ICARSService_GetReportBugAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecallLeave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICARSService/RecallLeave" message="tns:ICARSService_RecallLeave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICARSService/RecallLeaveResponse" message="tns:ICARSService_RecallLeave_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICARSService" type="tns:ICARSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagers">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetManagers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyLeave">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/ApplyLeave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyLeaves">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetMyLeaves" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyTeamLeaves">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetMyTeamLeaves" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveLeave">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/ApproveLeave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectLeave">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/RejectLeave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveEarnedHours">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetAnnualLeaveEarnedHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveUsedHours">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetAnnualLeaveUsedHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveUsedHours">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetSickLeaveUsedHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgetPassword">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/ForgetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaveTypes">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetLeaveTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindLeaves">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/FindLeaves" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployees">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetAllEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPeriods">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetReportPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportPeriods">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/UpdateReportPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrozenDate">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetFrozenDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveReportForAdminAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetAnnualLeaveReportForAdminAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveReportForAdminAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetSickLeaveReportForAdminAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualLeaveReportForSupervisorAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetAnnualLeaveReportForSupervisorAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSickLeaveReportForSupervisorAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetSickLeaveReportForSupervisorAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSupervisorValidation">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/CheckSupervisorValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserManualAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetUserManualAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportBugAddress">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/GetReportBugAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecallLeave">
+      <soap:operation soapAction="http://tempuri.org/ICARSService/RecallLeave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CARSService">
+    <wsdl:port name="BasicHttpBinding_ICARSService" binding="tns:BasicHttpBinding_ICARSService">
+      <soap:address location="http://cosapxdev7/CARSService/CARSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

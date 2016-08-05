@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARS", "CARS\CARS.csproj", "{B197E78B-18D0-4A90-B031-794E5C89959C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARS.Web", "CARS.Web\CARS.Web.csproj", "{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DEV|Any CPU = DEV|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.DEV|Any CPU.ActiveCfg = DEV|Any CPU
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.DEV|Any CPU.Build.0 = DEV|Any CPU
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B197E78B-18D0-4A90-B031-794E5C89959C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.DEV|Any CPU.ActiveCfg = DEV|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.DEV|Any CPU.Build.0 = DEV|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7859038-DD20-4A9F-B0B5-EDFE2E991E92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

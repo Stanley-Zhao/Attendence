@@ -1,0 +1,20 @@
+﻿<controls:ChildWindow x:Class="CARS.Control.LeavePreview"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:carscontrols="clr-namespace:CARS.Control"           
+           Width="472" FontFamily="Verdana" FontSize="12"
+           xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"           
+           Title="Leave Preview">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <carscontrols:BaseApplyInfo x:Name="baseApplyInfo" Grid.Row="0" />
+        <TextBox IsReadOnly="True" x:Name="warningInfo" Foreground="Red" FontSize="10" Grid.Row="1" TextWrapping="Wrap"/>
+        <Button Grid.Row="2" x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
+        <Button Grid.Row="2" x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" />
+    </Grid>
+</controls:ChildWindow>

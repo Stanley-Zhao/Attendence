@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CARS.Control.EmployeeRecords"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Margin="5,5,5,5"
+    d:DesignHeight="300" d:DesignWidth="900" MaxHeight="597" MinWidth="850"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data">
+	<UserControl.Resources>
+		<Style x:Key="DataGridHeaderStyle" TargetType="Primitives:DataGridColumnHeader">
+			<Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+		</Style>
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid Width="800" Height="Auto" Grid.Row="0" x:Name="gridPanel" LayoutUpdated="gridPanel_LayoutUpdated">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+		</Grid>
+		<data:DataGrid Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" AutoGenerateColumns="False" 
+					   HorizontalAlignment="Center" x:Name="records" VerticalAlignment="Top"
+					   RowBackground="Transparent" AlternatingRowBackground="LightGray"
+					   HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+			<data:DataGrid.Columns>
+				<data:DataGridTextColumn x:Name="indexHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="No." Width="40" IsReadOnly="True" Binding="{Binding Index}"/>
+				<data:DataGridTextColumn x:Name="emailHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="Email" Width="160" IsReadOnly="True" Binding="{Binding Email}" />
+				<data:DataGridTextColumn x:Name="fNameHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="First Name" Width="150" IsReadOnly="True" Binding="{Binding FirstName}" />
+				<data:DataGridTextColumn x:Name="lNameHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="Last Name" Width="150" IsReadOnly="True" Binding="{Binding LastName}" />
+				<data:DataGridTextColumn x:Name="genderHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="Gender" Width="50" IsReadOnly="True" Binding="{Binding GenderValue}" />
+				<data:DataGridTextColumn x:Name="yearsHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="Service Years" Width="100" IsReadOnly="True" Binding="{Binding ServiceYearsValue}" />
+				<data:DataGridTextColumn x:Name="supervisorHeader" HeaderStyle="{StaticResource DataGridHeaderStyle}" Header="Supervisor" Width="150" IsReadOnly="True" Binding="{Binding SupervisorValue}" />
+			</data:DataGrid.Columns>
+		</data:DataGrid>
+	</Grid>
+</UserControl>

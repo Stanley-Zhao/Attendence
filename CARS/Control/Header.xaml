@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="CARS.Control.Header"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:inputData ="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"
+    mc:Ignorable="d">
+	<StackPanel Orientation="Vertical">
+		<Grid x:Name="LayoutRoot" Background="White" MinWidth="800" Height="32">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="32" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Image Name="logoImage" Source="/CARS;component/Images/advent_logo.jpg" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0"/>
+			<inputData:Label Margin="20,0,0,0" Grid.Column="1" Grid.Row="0" x:Name="headerLabel" FontSize="16" FontFamily="Verdana" FontWeight="Bold" Foreground="Black" Content="Header" />
+			<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+				<TextBlock x:Name="headerContent" Margin="0,0,0,0" Text="Hello, Demo" VerticalAlignment="Center" FontSize="12" />
+				<TextBlock x:Name="headerTime" Margin="10,0,10,0" Text="Today is" VerticalAlignment="Center" FontSize="12" />
+                <HyperlinkButton FontFamily="Verdana" Margin="0,0,10,0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="userManualButton" Content="User Manual" Click="userManualButton_Click"  />
+                <HyperlinkButton FontFamily="Verdana" Margin="0,0,10,0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" x:Name="reportBugButton" Content="Report Bug" Click="reportBugButton_Click"  />
+                <CheckBox Margin="0,0,10,0" Name="savePW" Content="Save login information"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" Visibility="Visible" Checked="savePW_Checked" Unchecked="savePW_Unchecked" />
+                <CheckBox Margin="0,0,10,0" Name="autoLogin" Content="Auto-login" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" Visibility="Visible" IsEnabled="False" Checked="autoLogin_Checked" Unchecked="autoLogin_Unchecked" />
+                <HyperlinkButton x:Name="exitButton" Margin="0,0,10,0" Content="Exit" Click="exitButton_Click" VerticalAlignment="Center" FontSize="12" />
+			</StackPanel>
+		</Grid>
+		<Grid x:Name="HeaderBoarder" Background="White" MinWidth="800" Height="4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="4"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Grid.Row="0" Grid.Column="0" Height="Auto" Width="Auto">
+				<StackPanel.Background>
+					<LinearGradientBrush>
+						<GradientStop Color="Black" />
+						<GradientStop Color="LightGray" Offset="1"/>
+					</LinearGradientBrush>
+				</StackPanel.Background>
+			</StackPanel>
+		</Grid>
+	</StackPanel>
+</UserControl>

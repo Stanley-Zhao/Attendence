@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" />
+  <xs:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="LoginResult" nillable="true" type="q1:Employee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="middleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="legalName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="gender" type="q2:Sex" />
+        <xs:element minOccurs="0" name="serviceYear" type="xs:float" />
+        <xs:element minOccurs="0" name="dateOfHire" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="supervisorEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="costCenterCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="AddEmployeeResult" nillable="true" type="q3:Employee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="middleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="legalName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="gender" type="q4:Sex" />
+        <xs:element minOccurs="0" name="serviceYear" type="xs:float" />
+        <xs:element minOccurs="0" name="dateOfHire" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="supervisorEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isAdmin" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isManager" type="xs:boolean" />
+        <xs:element minOccurs="0" name="costCenterCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="UpdateEmployeeResult" nillable="true" type="q5:Employee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManagers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManagersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetManagersResult" nillable="true" type="q6:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="leaveType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="durationList" nillable="true" type="q7:ArrayOfTimeDurationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyLeaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="ApplyLeaveResult" nillable="true" type="q8:LeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyLeaves">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyLeavesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetMyLeavesResult" nillable="true" type="q9:ArrayOfLeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyTeamLeaves">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="onlyApplyingRecords" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyTeamLeavesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetMyTeamLeavesResult" nillable="true" type="q10:ArrayOfLeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="managerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="leaveID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="status" type="q11:LeaveStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveLeaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="ApproveLeaveResult" nillable="true" type="q12:LeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="managerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="leaveID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="status" type="q13:LeaveStatus" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectLeaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="RejectLeaveResult" nillable="true" type="q14:LeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveEarnedHours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveEarnedHoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnnualLeaveEarnedHoursResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveUsedHours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveUsedHoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnnualLeaveUsedHoursResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveUsedHours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveUsedHoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSickLeaveUsedHoursResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ForgetPasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeaveTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeaveTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetLeaveTypesResult" nillable="true" type="q15:ArrayOfLeaveType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindLeaves">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supervisors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicants" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="leaveTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="leaveStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="supervisorIDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindLeavesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="FindLeavesResult" nillable="true" type="q16:ArrayOfLeaveInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEmployees">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetAllEmployeesResult" nillable="true" type="q17:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPeriods">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPeriodsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="GetReportPeriodsResult" nillable="true" type="q18:ArrayOfReportPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReportPeriods">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" minOccurs="0" name="reportPeriods" nillable="true" type="q19:ArrayOfReportPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReportPeriodsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateReportPeriodsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFrozenDate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFrozenDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFrozenDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveReportForAdminAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveReportForAdminAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnnualLeaveReportForAdminAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveReportForAdminAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveReportForAdminAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSickLeaveReportForAdminAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveReportForSupervisorAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnualLeaveReportForSupervisorAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnnualLeaveReportForSupervisorAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveReportForSupervisorAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSickLeaveReportForSupervisorAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSickLeaveReportForSupervisorAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSupervisorValidation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supervisorID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSupervisorValidationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckSupervisorValidationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserManualAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserManualAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserManualAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportBugAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportBugAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportBugAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecallLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pkleaveInfoID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecallLeaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecallLeaveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

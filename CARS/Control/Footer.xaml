@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="CARS.Control.Footer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<StackPanel Orientation="Vertical">
+		<Grid x:Name="FooterBoarder" MinWidth="800" Height="4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="4"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Grid.Row="0" Grid.Column="0" Height="Auto" Width="Auto">
+				<StackPanel.Background>
+					<LinearGradientBrush>
+						<GradientStop Color="Black" />
+						<GradientStop Color="LightGray" Offset="1"/>
+					</LinearGradientBrush>
+				</StackPanel.Background>
+			</StackPanel>
+		</Grid>
+		<Grid x:Name="LayoutRoot" Background="White" MinWidth="800" Height="32">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Row="0" Grid.Column="0" Name="footerContent" Margin="0,0,0,0" Text="ADVENT SOFTWARE INTERNAL USE ONLY" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" />
+		</Grid>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,120 @@
+﻿<controls:ChildWindow x:Class="CARS.Control.GenerateReport"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" 
+           Title="Generate Report" xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="10,0,10,2" Name="dateGrid" VerticalAlignment="Top" Width="360">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <!-- Jan. -->
+                <RowDefinition />
+                <!-- Feb. -->
+                <RowDefinition />
+                <!-- Mar. -->
+                <RowDefinition  />
+                <!-- Apr. -->
+                <RowDefinition  />
+                <!-- May. -->
+                <RowDefinition  />
+                <!-- Jun. -->
+                <RowDefinition  />
+                <!-- Jul. -->
+                <RowDefinition  />
+                <!-- Aug. -->
+                <RowDefinition  />
+                <!-- Sep. -->
+                <RowDefinition  />
+                <!-- Oct. -->
+                <RowDefinition  />
+                <!-- Nov. -->
+                <RowDefinition  />
+                <!-- Dec. -->
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="40*" />
+            </Grid.ColumnDefinitions>
+            <!-- header -->
+            <dataInput:Label Grid.Column="1" HorizontalAlignment="Left" Margin="20,0,0,0" Name="startTimeLabel" Content="Start Time" VerticalAlignment="Center" Width="Auto" FontWeight="Bold" />
+            <dataInput:Label Grid.Column="2" HorizontalAlignment="Left" Margin="20,0,0,0" Name="endTimeLabel" Content="End Time" VerticalAlignment="Center" Width="Auto" FontWeight="Bold" />
+            <!-- 01-Jan. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month1Label" Content="01-Jan." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="1" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month1Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="1" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month1End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 02-Feb. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month2Label" Content="02-Feb." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="2" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month2Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="2" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month2End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 03-Mar. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month3Label" Content="03-Mar." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="3" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month3Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="3" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month3End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 04-Apr. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month4Label" Content="04-Apr." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="4" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month4Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="4" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month4End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 05-May. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month5Label" Content="05-May." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="5" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month5Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="5" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month5End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 06-Jun. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month6Label" Content="06-Jun." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="6" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month6Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="6" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month6End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 07-Jul. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month7Label" Content="07-Jul." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="7" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month7Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="7" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month7End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 08-Aug. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month8Label" Content="08-Aug." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="8" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month8Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="8" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month8End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 09-Spe. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month9Label" Content="09-Spe." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="9" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month9Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="9" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month9End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 10-Oct. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="10" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month10Label" Content="10-Oct." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="10" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month10Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="10" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month10End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 11-Nov. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="11" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month11Label" Content="11-Nov." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="11" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month11Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="11" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month11End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+
+            <!-- 12-Dec. -->
+            <dataInput:Label Grid.Column="0" Grid.Row="12" HorizontalAlignment="Left" Margin="20,0,0,0" Name="month12Label" Content="12-Dec." VerticalAlignment="Center" Width="Auto" FontWeight="Bold" Height="23" />
+            <controls:DatePicker Grid.Column="1" Grid.Row="12" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month12Start" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+            <controls:DatePicker Grid.Column="2" Grid.Row="12" Width="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Name="month12End" VerticalAlignment="Center" Height="23" SelectedDateChanged="month_SelectedDateChanged" />
+        </Grid>
+
+        <TextBlock Grid.Row="1" x:Name="error" FontSize="10" Foreground="Red" TextWrapping="Wrap" Width="360" Text="error" />
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,5,0,0" Grid.Row="2" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,5,79,0" Grid.Row="2" />
+        <ComboBox x:Name="reportTypeCom" Height="23" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,5,158,0" Grid.Row="2" Width="120" SelectedIndex="0" >
+            <ComboBoxItem Content="Administrator" />
+            <ComboBoxItem Content="Supervisor" />
+        </ComboBox>
+        <TextBlock Text="For: " Height="23" VerticalAlignment="Center"  Grid.Row="2" Margin="0,5,282,0" HorizontalAlignment="Right" />
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="CARS.Control.MultipleSelection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+	xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"		 
+    d:DesignHeight="300" d:DesignWidth="400" FontFamily="Verdana" FontSize="12" >
+
+	<Grid x:Name="LayoutRoot" Background="Transparent" MaxHeight="100" >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="20" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<dataInput:Label x:Name="sourceListLabel" Content="People in the list:" Grid.Column="0" Grid.Row="0" />
+		<dataInput:Label x:Name="selectedListLabel" Content="People in the CC list:" Grid.Column="2" Grid.Row="0" />
+
+		<ListBox x:Name="sourceList" Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" SelectionMode="Multiple">
+			<ListBoxItem Content="Demo1"/>
+			<ListBoxItem Content="Demo2"/>
+			<ListBoxItem Content="Demo3"/>
+		</ListBox>
+		<StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Orientation="Vertical" >
+			<Button x:Name="selectButton" Content="->" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Click="selectButton_Click" />
+			<Button x:Name="unSelectButton" Content="&lt;-" HorizontalAlignment="Center" VerticalAlignment="Center" Click="unSelectButton_Click"/>
+		</StackPanel>
+		<ListBox x:Name="selectedList" Grid.Row="2" Grid.Column="2" Width="Auto" Height="Auto" SelectionMode="Multiple">
+			<ListBoxItem Content="Demo4"/>
+			<ListBoxItem Content="Demo5"/>
+		</ListBox>
+	</Grid>
+</UserControl>

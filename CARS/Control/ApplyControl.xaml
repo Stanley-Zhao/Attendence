@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="CARS.Control.ApplyControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" FontFamily="Verdana" FontSize="12"
+    d:DesignHeight="591" d:DesignWidth="605" Margin="30,0,0,0"
+	xmlns:carscontrol="clr-namespace:CARS.Control" HorizontalAlignment="Center"
+ VerticalAlignment="Top"	xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"		 >
+    <Grid x:Name="LayoutRoot" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="420"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="basicGrid" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="120" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
+                <dataInput:Label Content="*" Foreground="Red"  HorizontalAlignment="Right" Margin="0,0,2,0" />
+                <dataInput:Label Content="Reason" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">
+                <dataInput:Label Content="*" Foreground="Red"  HorizontalAlignment="Right" Margin="0,0,2,0" />
+                <dataInput:Label Content="Type" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            </StackPanel>
+            <dataInput:Label Content="Description" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
+                <dataInput:Label Content="*" Foreground="Red"  HorizontalAlignment="Right" Margin="0,0,2,0" />
+                <dataInput:Label Content="Start" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right">
+                <dataInput:Label Content="*" Foreground="Red"  HorizontalAlignment="Right" Margin="0,0,2,0" />
+                <dataInput:Label Content="End" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            </StackPanel>
+
+            <TextBox x:Name="reason" Width="Auto" Grid.Row="0" Grid.Column="1" Height="23" VerticalAlignment="Center" TextChanged="reason_TextChanged" />
+			<Button x:Name="recallButton" Visibility="Collapsed" Content="Recall" Grid.Row="0" Grid.Column="2" Height="23" Click="recallButton_Click" />
+            <ComboBox x:Name="leaveType" Width="Auto" Grid.Row="1" Grid.Column="1" Height="23" VerticalAlignment="Center" SelectionChanged="leaveType_SelectionChanged">
+                
+            </ComboBox>
+            <TextBox x:Name="description" Width="Auto" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Height="120" TextChanged="description_TextChanged" AcceptsReturn="True" />
+            <Button x:Name="addToListButton" Content="Add to List" Grid.Row="4" Grid.Column="2" Height="23" Click="addToListButton_Click" />
+            <ListBox x:Name="datesList" Height="120" Width="Auto" Grid.Row="5" Grid.Column="1" />
+            <Button x:Name="removeFromListButton" VerticalAlignment="Bottom" Content="Remove" Grid.Row="5" Grid.Column="2" Height="23" Click="removeFromListButton_Click" />
+        </Grid>
+        <dataInput:Label x:Name="askedHoursLabel" HorizontalAlignment="Right" FontWeight="Bold" FontSize="16" Grid.Row="1" Margin="0,0,20,0" Content="Ask 0.0 Hours" />
+        <!--carscontrol:NumberColorBars Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" /-->
+        <StackPanel Orientation="Vertical" Grid.Row="2">
+            <dataInput:Label x:Name="sickLeaveLabel" Content="sick leave" />
+            <dataInput:Label x:Name="annualLeaveLabel"  Content="annual leave" />
+        </StackPanel>
+        <StackPanel Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Orientation="Vertical">
+            <StackPanel x:Name="buttonBar" Height="30" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="actButton" HorizontalAlignment="Center" Height="23" Width="80" Content="Apply" Click="actButton_Click"  IsEnabled="False"  />                
+            </StackPanel>
+            <dataInput:Label Name="noteLabel" Content="Demo" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" Foreground="#FFD43131" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

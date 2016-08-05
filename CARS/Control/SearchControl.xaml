@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="CARS.Control.SearchControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dataInput ="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"         
+    mc:Ignorable="d"
+    d:DesignHeight="100" d:DesignWidth="810">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Height="Auto" Width="Auto" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Width="810" Visibility="Collapsed" Height="Auto" Grid.Row="0" x:Name="applyGrid" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <dataInput:Label x:Name="label" Foreground="CornflowerBlue" Content="" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,3,3" Visibility="Collapsed"/>
+            <Button x:Name="refreshApplyButton" Grid.Column="1" Content="Refresh" HorizontalAlignment="Left" Width="80" Height="23" Click="refreshApplyButton_Click" Margin="0,0,0,3" />
+        </Grid>
+        
+        <Grid Width="810" Visibility="Collapsed" Height="Auto" Grid.Row="1" x:Name="approvalGrid" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Content="Show All Records" x:Name="chkShowAll" Grid.Column="0" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center" Checked="chkShowAll_Checked" Unchecked="chkShowAll_Unchecked" />
+            <dataInput:Label x:Name="runAsLabel" Foreground="CornflowerBlue" Content="Run As" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,3,3" Visibility="Collapsed"/>            
+            <Button x:Name="runasButton" Grid.Column="2" HorizontalAlignment="Right" Content="Run As" Width="80" Height="23" Click="runasButton_Click" Margin="0,0,0,3" />
+            <Button x:Name="approveButton" Grid.Column="3" HorizontalAlignment="Right" Content="Approve" Width="80" Height="23" Click="approveButton_Click" Margin="0,0,0,3" />
+            <Button x:Name="rejectButton" Grid.Column="4" Content="Reject" HorizontalAlignment="Right" Width="80" Height="23" Click="rejectButton_Click" Margin="0,0,0,3" />
+            <Button x:Name="selectAllButton" Grid.Column="5" Content="Select All" HorizontalAlignment="Right" Width="80" Height="23" Click="selectAllButton_Click" Margin="0,0,0,3" />
+            <Button x:Name="clearAllButton" Grid.Column="6" Content="Unselect All" HorizontalAlignment="Right" Width="80" Height="23" Click="clearAllButton_Click" Margin="0,0,0,3" />
+            <Button x:Name="refreshButton" Grid.Column="7" Content="Refresh" HorizontalAlignment="Right" Width="80" Height="23" Click="refreshButton_Click" Margin="0,0,0,3" />
+        </Grid>
+
+        <Grid Width="810" Height="Auto" Visibility="Collapsed" Grid.Row="2" x:Name="historyGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label  Content="Approved By" Margin="0,0,5,3" HorizontalAlignment="Right"  />
+                <!--<TextBox Width="120" Height="23" x:Name="supervisor" HorizontalAlignment="Right">
+                    <ToolTipService.ToolTip>
+                        <TextBlock>
+                            <Run>Input email account without "@Advent.com", case insensitive.</Run><LineBreak />                            
+                            <Run>If you want to search multiple people, use comma as divider.</Run><LineBreak />
+                            <Run>Like: user1, user2, user3</Run>
+                        </TextBlock>
+                    </ToolTipService.ToolTip>
+                </TextBox>-->
+                <ComboBox Width="120" Height="23" x:Name="supervisor" HorizontalAlignment="Right" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label  Content="Applicant" Margin="0,0,5,3" HorizontalAlignment="Right"   />
+                <!--<TextBox Width="120" Height="23" x:Name="applicant"  HorizontalAlignment="Right">
+                <ToolTipService.ToolTip>
+                    <TextBlock>
+                            <Run>Input email account without "@Advent.com", case insensitive.</Run><LineBreak />                            
+                            <Run>If you want to search multiple people, use comma as divider.</Run><LineBreak />
+                            <Run>Like: user1, user2, user3</Run>
+                    </TextBlock>
+                </ToolTipService.ToolTip>
+                </TextBox>-->
+                <ComboBox Width="120" Height="23" x:Name="applicant" HorizontalAlignment="Right" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label  Content="Leave Type" Margin="0,0,5,3" HorizontalAlignment="Right"  />
+                <ComboBox Width="110" Height="23" x:Name="leaveType" HorizontalAlignment="Right"  >
+                    <ComboBoxItem Content="All" />
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label Content="Leave Status" Margin="0,0,5,3" HorizontalAlignment="Right"   />
+                <ComboBox Width="110" Height="23" x:Name="leaveStatus" HorizontalAlignment="Right"  >
+                    <ComboBoxItem Content="All" />
+                    <ComboBoxItem Content="Applying" />
+                    <ComboBoxItem Content="Accepted" />
+                    <ComboBoxItem Content="Rejected" />
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label  Content="Start" Margin="0,3,5,3" HorizontalAlignment="Right"   />
+                <controls:DatePicker x:Name="start" Width="120" Height="23"  HorizontalAlignment="Right" Margin="0,3,0,0" SelectedDateChanged="start_SelectedDateChanged" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <dataInput:Label  Content="End" Margin="0,3,5,3" HorizontalAlignment="Right"  />
+                <controls:DatePicker x:Name="end" Width="120"  Height="23"  HorizontalAlignment="Right" Margin="0,3,0,0" SelectedDateChanged="end_SelectedDateChanged" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Right" >
+                <Button x:Name="searchButton" Content="Search" Click="searchButton_Click" Width="80" Height="23" HorizontalAlignment="Right" Margin="0,3,0,0" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

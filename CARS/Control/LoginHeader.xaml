@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="CARS.Control.LoginHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"         
+    d:DesignHeight="300" d:DesignWidth="400">
+	<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0" Name="stackPanel" VerticalAlignment="Top" Height="48" Width="580">
+		<Image Height="48" Name="logoImage" Source="/CARS;component/Images/advent_logo.jpg" Stretch="Fill" Width="52" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+		<dataInput:Label Margin="10,0,0,0" Height="50" Name="logoLabel" Content="Advent - China Attendance Records System" Width="680" FontFamily="Verdana" FontSize="20" />
+	</StackPanel>    
+</UserControl>

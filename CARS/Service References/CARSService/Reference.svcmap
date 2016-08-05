@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6f3eb869-ae7b-42c1-ab65-ed27b9088199" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://cosapxdev7/CARSService/CARSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CARSService4.xsd" MetadataType="Schema" ID="2e1361b4-d245-411a-ad47-9eafde2ea51f" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CARSService41.xsd" MetadataType="Schema" ID="21c8ac85-4214-4346-b0c9-d084e480bba8" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CARSService42.xsd" MetadataType="Schema" ID="7918c45e-dd17-42f8-aa4e-20486fb6ba1b" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CARSService1.disco" MetadataType="Disco" ID="54255902-b9ec-4223-8bcc-17aa47ac9c7c" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?disco" />
+    <MetadataFile FileName="CARSService1.wsdl" MetadataType="Wsdl" ID="00974abd-2be3-479d-9e3a-6f9619df771f" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?wsdl" />
+    <MetadataFile FileName="CARSService43.xsd" MetadataType="Schema" ID="1c874d5b-4734-4a13-bd91-16ab5f415c0c" SourceId="1" SourceUrl="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

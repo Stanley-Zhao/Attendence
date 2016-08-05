@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CARS.Control.BaseApplyInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"          
+    d:DesignHeight="354" d:DesignWidth="489">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<StackPanel Orientation="Vertical"
+>
+			<Grid x:Name="basicGrid" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="40" />
+					<RowDefinition Height="120" />
+					<RowDefinition Height="120" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="85" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<!-- reason -->
+				<dataInput:Label Content="Reason" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+				<dataInput:Label  x:Name="reason" Content="Leave Reason" Width="Auto" Grid.Row="0" Grid.Column="1" Height="20" VerticalAlignment="Center" />
+
+				<!-- type -->
+				<dataInput:Label Content="Type" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+				<dataInput:Label x:Name="leaveType" Content="Leave Type" Width="Auto" Grid.Row="1" Grid.Column="1" Height="20" VerticalAlignment="Center" />
+
+				<!-- description -->
+				<dataInput:Label Content="Description" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+				<TextBox x:Name="description" IsReadOnly="True" Width="Auto" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Height="120" />
+
+				<!-- dates list-->
+				<dataInput:Label Content="Dates" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" />
+				<ListBox x:Name="datesList" Height="120" Width="Auto" Grid.Row="5" Grid.Column="1" />
+			</Grid>
+			<dataInput:Label x:Name="note" HorizontalAlignment="Right" FontWeight="Bold" FontSize="16" Grid.Row="1" Margin="0,0,20,0" Content="Ask 0.0 Hours" />
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://cosapxdev7/CARSService/CARSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" />
+  <xs:complexType name="Employee">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActiveEmployeeRoleList" nillable="true" type="tns:ArrayOfEmployeeRoleRL" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CostCenter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeNum" type="xs:int" />
+          <xs:element minOccurs="0" name="FKReportManagerID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="Gender" type="q1:Sex" />
+          <xs:element minOccurs="0" name="HiredDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsManager" type="xs:boolean" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Leaders" nillable="true" type="tns:ArrayOfEmployee" />
+          <xs:element minOccurs="0" name="LegalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Manager" nillable="true" type="tns:Employee" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PKEmployeeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceYears" type="xs:float" />
+          <xs:element minOccurs="0" name="TeamMembers" nillable="true" type="tns:ArrayOfEmployee" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="ArrayOfEmployeeRoleRL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeRoleRL" nillable="true" type="tns:EmployeeRoleRL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeRoleRL" nillable="true" type="tns:ArrayOfEmployeeRoleRL" />
+  <xs:complexType name="EmployeeRoleRL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FKEmployeeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FKRoleID" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PKEmployeeRoleRLID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeRoleRL" nillable="true" type="tns:EmployeeRoleRL" />
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
+  <xs:complexType name="ArrayOfTimeDurationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeDurationInfo" nillable="true" type="tns:TimeDurationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeDurationInfo" nillable="true" type="tns:ArrayOfTimeDurationInfo" />
+  <xs:complexType name="TimeDurationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FKLeaveInfoID" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PKTDInfoID" type="ser:guid" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimeDurationInfo" nillable="true" type="tns:TimeDurationInfo" />
+  <xs:complexType name="LeaveInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FKLeaveTypeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FKReportManagerID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FKSubmitEmployeeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FirstStartTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hours" type="xs:int" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastEndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Manager" nillable="true" type="tns:Employee" />
+          <xs:element minOccurs="0" name="PKLeaveInfoID" type="ser:guid" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="PreStatus" type="q2:LeaveStatus" />
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="Status" type="q3:LeaveStatus" />
+          <xs:element minOccurs="0" name="Submitter" nillable="true" type="tns:Employee" />
+          <xs:element minOccurs="0" name="TimeDurationInfoList" nillable="true" type="tns:ArrayOfTimeDurationInfo" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="tns:LeaveType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LeaveInfo" nillable="true" type="tns:LeaveInfo" />
+  <xs:complexType name="LeaveType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LeastHoursOneTime" type="xs:int" />
+          <xs:element minOccurs="0" name="LongestHoursOneTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PKLeaveTypeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TotalHours" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LeaveType" nillable="true" type="tns:LeaveType" />
+  <xs:complexType name="ArrayOfLeaveInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaveInfo" nillable="true" type="tns:LeaveInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaveInfo" nillable="true" type="tns:ArrayOfLeaveInfo" />
+  <xs:complexType name="ArrayOfLeaveType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaveType" nillable="true" type="tns:LeaveType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaveType" nillable="true" type="tns:ArrayOfLeaveType" />
+  <xs:complexType name="ArrayOfReportPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportPeriod" nillable="true" type="tns:ReportPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportPeriod" nillable="true" type="tns:ArrayOfReportPeriod" />
+  <xs:complexType name="ReportPeriod">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="KnowledgeDate" type="xs:dateTime" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" minOccurs="0" name="Month" type="q4:MonthRank" />
+          <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportPeriod" nillable="true" type="tns:ReportPeriod" />
+</xs:schema>

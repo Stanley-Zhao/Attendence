@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CARS.Backend.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Sex">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Sex" nillable="true" type="tns:Sex" />
+  <xs:simpleType name="LeaveStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Applying" />
+      <xs:enumeration value="Rejected" />
+      <xs:enumeration value="Accepted" />
+      <xs:enumeration value="Cancelling" />
+      <xs:enumeration value="Cancelled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LeaveStatus" nillable="true" type="tns:LeaveStatus" />
+  <xs:simpleType name="MonthRank">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Jan" />
+      <xs:enumeration value="Feb" />
+      <xs:enumeration value="Mar" />
+      <xs:enumeration value="Apr" />
+      <xs:enumeration value="May" />
+      <xs:enumeration value="Jun" />
+      <xs:enumeration value="Jul" />
+      <xs:enumeration value="Aug" />
+      <xs:enumeration value="Sep" />
+      <xs:enumeration value="Oct" />
+      <xs:enumeration value="Nov" />
+      <xs:enumeration value="Dec" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MonthRank" nillable="true" type="tns:MonthRank" />
+</xs:schema>

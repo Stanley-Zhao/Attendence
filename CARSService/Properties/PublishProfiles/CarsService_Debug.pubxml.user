@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\cars_build\CARSService</_PublishTargetUrl>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CARS.Backend.dll">
+      <publishTime>08/04/2016 08:42:54</publishTime>
+    </File>
+    <File Include="bin/CARS.Backend.pdb">
+      <publishTime>08/04/2016 08:42:54</publishTime>
+    </File>
+    <File Include="bin/CARSService.dll">
+      <publishTime>08/04/2016 08:42:55</publishTime>
+    </File>
+    <File Include="bin/CARSService.pdb">
+      <publishTime>08/04/2016 08:42:55</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="CARSService.svc">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="clientaccesspolicy.xml">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="emails/ApplyLeave.txt">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="emails/ApproveLeave.txt">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="emails/EmailSenderConfig.txt">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="emails/ForgetPassword.txt">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="emails/RecallLeave.txt">
+      <publishTime>07/20/2016 19:04:42</publishTime>
+    </File>
+    <File Include="emails/Register_ToEmployeeSelf.txt">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="log4net.config">
+      <publishTime>11/17/2015 21:59:33</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/04/2016 08:43:07</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

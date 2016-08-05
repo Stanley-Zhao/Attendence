@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ICARSService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="../../CARSService/CARSService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ICARSService" contract="CARSService.ICARSService"
+                name="BasicHttpBinding_ICARSService" />
+        </client>
+    </system.serviceModel>
+</configuration>

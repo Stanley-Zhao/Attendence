@@ -1,0 +1,16 @@
+﻿<controls:ChildWindow x:Class="CARS.Control.Message"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Title="Message">
+    <Grid x:Name="LayoutRoot" Margin="2" MinWidth="200">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" />
+        <Image Height="32" HorizontalAlignment="Left" Margin="20,0,0,0" Name="icon" Stretch="Fill" VerticalAlignment="Center" Width="32" Source="/CARS;component/Images/Error32x32.png" />
+        <TextBlock HorizontalAlignment="Left" Margin="72,20,20,20" Name="message" Text="Message here." TextWrapping="Wrap" VerticalAlignment="Top" MaxWidth="400" />
+    </Grid>
+</controls:ChildWindow>
